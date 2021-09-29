@@ -5,13 +5,53 @@ html {
 }
 
 body {
-  background-color: var(--grayish-cyan);
+  background-color: var(--light-grayish-cyan);
+  color: var(--darkest-grayish-cyan);
+  font-weight: 700;
+  font-size: 18px;
 }
 
 input{
   text-align: right;
+  padding: 4px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  position: relative;
+  color: var(--very-dark-cyan);
+  outline: none;
+  &:hover, &:active, &:focus {
+    border: 2px solid var(--strong-cyan);
+  }
 }
 
 label {
   display: block;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+input::placeholder {
+  color: var(--darkest-grayish-cyan);
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  &:not(.disabled){
+    &:hover, &:active, &:focus {
+      color: var(--very-dark-cyan);
+      background-color: var(--light-grayish-cyan);
+    };
+  }
+}
+::-webkit-input-placeholder {
+  color: var(--dark-grayish-cyan) !important;
 }

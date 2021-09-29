@@ -1,51 +1,92 @@
 <template>
   <div class="input__wrapper">
-    <slot name="label"></slot>
+    <div class="label">
+      <label>{{label}}</label>
+      <span v-if="error" class="error">{{error}}</span>
+    </div>
     <input
       type="number"
       :placeholder="placeholder"
-      @input = "e => $emit('valueChange', Number(e.target.value))"
+      @input = "handleInput"
+      :style="`background: var(--lightest-grayish-cyan) url(src/images/${prefix}.svg) no-repeat 20px center`"
+      v-model = "usertext"
+      :class = "{'field__error' : error}"
     >
-    <slot name="prefix"></slot>
-
-      <!-- <template v-slot:header>
-        <h1>Here might be a page title</h1>
-      </template> -->
-
-      <!-- <slot v-bind:user="user"></slot> -->
-      <!-- <template v-slot:default="slotProps">
-        {{ slotProps.user.firstName }}
-      </template> -->
-
   </div>
 </template>
 
 <script>
 export default {
-    name: 'BillInput',
-    data() {
-        return {}
-    },
-    props: {
-      label: {
-        type: String,
-        default: 'Label'
-      },
-      placeholder: {
-        type: [String, Number],
-        default: 0
-      },
-      suffix: {
-        type: String
-      }
+  name: 'UserInput',
+  data() {
+    return {
+      usertext: '',
+      error: ''
     }
+  },
+  props: {
+    label: {
+      type: String,
+      default: 'Label'
+    },
+    placeholder: {
+      type: [String, Number],
+      default: 0
+    },
+    prefix: {
+      type: String,
+      default: 'icon-dollar'
+    },
+    triggerReset: {
+      type: Boolean,
+      default: false
+    },
+    rules: {
+      type: Array,
+      default: null,
+    }
+  },
+  watch: {
+    triggerReset() {
+      this.usertext = ''
+      this.error = ''
+    }
+  },
+  methods: {
+    handleInput(e) {
+      const val = Number(e.target.value);
+      if(this.rules)
+        this.validateInput(val);
+      this.$emit('valueChange', val);
+    },
+    validateInput(val) {
+      const {condition, message} = this.rules[0];
+      if(condition(val))
+        this.error = '';
+      else
+        this.error = message;
+    }
+  }
 }
 </script>
 
 <style lang="scss">
   .input__wrapper {
-    width: 500px;
     position: relative;
+  }
+  .icon {
+    width: 11px;
+    height: 17px;
+  }
+  .error {
+    color: var(--error);
+    font-size: 16px;
+  }
+  .field__error {
+    border-color: var(--error);
+    &:hover, &:active, &:focus {
+      border-color: var(--error);
+    }
   }
 
 </style>
