@@ -51,6 +51,9 @@ button {
       background-color: var(--light-grayish-cyan);
     };
   }
+  &.disabled {
+    cursor: not-allowed;
+  }
 }
 ::-webkit-input-placeholder {
   color: var(--dark-grayish-cyan) !important;

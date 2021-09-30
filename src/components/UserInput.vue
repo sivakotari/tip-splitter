@@ -8,7 +8,7 @@
       type="number"
       :placeholder="placeholder"
       @input = "handleInput"
-      :style="`background: var(--lightest-grayish-cyan) url(src/images/${prefix}.svg) no-repeat 20px center`"
+      :style="`background: var(--lightest-grayish-cyan) ${url} no-repeat 20px center`"
       v-model = "usertext"
       :class = "{'field__error' : error}"
     >
@@ -50,6 +50,11 @@ export default {
     triggerReset() {
       this.usertext = ''
       this.error = ''
+    }
+  },
+  computed: {
+    url: function() {
+      return `url('./src/images/${this.prefix}.svg')`;
     }
   },
   methods: {
