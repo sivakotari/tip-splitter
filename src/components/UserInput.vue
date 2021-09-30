@@ -8,7 +8,7 @@
       type="number"
       :placeholder="placeholder"
       @input = "handleInput"
-      :style="`background: var(--lightest-grayish-cyan) ${url} no-repeat 20px center`"
+      :style="style()"
       v-model = "usertext"
       :class = "{'field__error' : error}"
     >
@@ -70,6 +70,11 @@ export default {
         this.error = '';
       else
         this.error = message;
+    },
+    style() {
+      return {
+        'background': `var(--lightest-grayish-cyan) url(src/images/${this.prefix}.svg) no-repeat 20px center`,
+      }
     }
   }
 }
@@ -78,6 +83,9 @@ export default {
 <style lang="scss">
   .input__wrapper {
     position: relative;
+    input {
+      // background: url(`@/images/${this.prefix}.svg`) no-repeat center 80px;
+    }
   }
   .icon {
     width: 11px;
