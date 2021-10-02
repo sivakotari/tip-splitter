@@ -8,7 +8,7 @@
       type="number"
       :placeholder="placeholder"
       @input = "handleInput"
-      :style="{ backgroundImage: `url(/images/${prefix}.svg)`}"
+      :style="{ backgroundImage: `url(/tip-splitter/images/${prefix}.svg)`}"
       v-model = "usertext"
       :class = "{'field__error' : error}"
     >
