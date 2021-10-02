@@ -5,10 +5,10 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  base: '/tip-splitter/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
-    base: '/tip-splitter/',
   },
 })
