@@ -6,6 +6,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 - [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
+## Resources - Vue app deployement to github pages
+https://learnvue.co/2020/09/how-to-deploy-your-vue-app-to-github-pages/
+https://dev.to/rolanddoda/deploy-to-github-pages-like-a-pro-with-github-actions-4hdg
 
 # Frontend Mentor - Tip calculator app solution
 
