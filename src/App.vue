@@ -87,7 +87,7 @@ export default {
     display: flex;
     align-items: baseline;
     height: 100vh;
-    background: url(@/images/logo.svg) no-repeat center 80px;
+    background: url(/images/logo.svg) no-repeat center 80px;
   }
   .app__container {
     padding: 0 35px;

@@ -52,11 +52,7 @@ export default {
       this.error = ''
     }
   },
-  computed: {
-    url: function() {
-      return `url('./src/images/${this.prefix}.svg')`;
-    }
-  },
+  computed: {},
   methods: {
     handleInput(e) {
       const val = Number(e.target.value);
@@ -73,7 +69,7 @@ export default {
     },
     style() {
       return {
-        'background': `var(--lightest-grayish-cyan) url(src/images/${this.prefix}.svg) no-repeat 20px center`,
+        'background': `var(--lightest-grayish-cyan) url(/images/${this.prefix}.svg) no-repeat 20px center`,
       }
     }
   }
