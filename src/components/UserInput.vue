@@ -8,7 +8,7 @@
       type="number"
       :placeholder="placeholder"
       @input = "handleInput"
-      :style="style()"
+      :style="{'backgroundImage': `url(/images/icon-dollar.svg)`}"
       v-model = "usertext"
       :class = "{'field__error' : error}"
     >
@@ -67,11 +67,6 @@ export default {
       else
         this.error = message;
     },
-    style() {
-      return {
-        'background': `var(--lightest-grayish-cyan) url(/images/${this.prefix}.svg) no-repeat 20px center`,
-      }
-    }
   }
 }
 </script>
@@ -80,7 +75,9 @@ export default {
   .input__wrapper {
     position: relative;
     input {
-      // background: url(`@/images/${this.prefix}.svg`) no-repeat center 80px;
+      background-color: var(--lightest-grayish-cyan);
+      background-repeat: no-repeat;
+      background-position: 20px center;
     }
   }
   .icon {
