@@ -8,7 +8,7 @@
       type="number"
       :placeholder="placeholder"
       @input = "handleInput"
-      :style="{'backgroundImage': `url(/images/icon-dollar.svg)`}"
+      :style="{ backgroundImage: `url(/images/${prefix}.svg)`}"
       v-model = "usertext"
       :class = "{'field__error' : error}"
     >
@@ -75,6 +75,7 @@ export default {
   .input__wrapper {
     position: relative;
     input {
+      // background-image: url(/images/icon-dollar.svg);
       background-color: var(--lightest-grayish-cyan);
       background-repeat: no-repeat;
       background-position: 20px center;

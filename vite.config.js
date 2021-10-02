@@ -5,7 +5,9 @@ import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/tip-splitter/',
+  base: process.env.NODE_ENV === 'production'
+  ? '/tip-splitter/'
+  : '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: '/tip-splitter/'
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/tip-splitter/'
+    : '/'
 }
