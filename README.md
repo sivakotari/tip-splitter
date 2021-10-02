@@ -36,6 +36,8 @@ Users should be able to:
 
 ### Screenshot
 
+![tip-splitter-desktop](https://user-images.githubusercontent.com/19163868/135724599-0522fc9b-a007-43ec-ae8e-91efd4f697cd.png)
+![Annotation 2021-10-02 214052](https://user-images.githubusercontent.com/19163868/135724602-6b786a97-2284-473d-919c-08046bbaa7a0.png)
 
 
 ### Links
